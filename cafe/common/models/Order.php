@@ -6,7 +6,7 @@ namespace common\models;
  * This is the model class for table "order".
  *
  * @property int $id
- * @property string $name
+ * @property string $date
  *
  * @property OrderMenu[] $orderMenus
  */
@@ -26,8 +26,7 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['name'], 'safe'],
+            ['date', 'default', 'value' => date('Y-m-d H:i:s')],
         ];
     }
 

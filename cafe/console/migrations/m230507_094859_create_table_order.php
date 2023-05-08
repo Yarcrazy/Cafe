@@ -14,7 +14,7 @@ class m230507_094859_create_table_order extends Migration
     {
         $this->createTable('{{%order}}', [
             'id' => $this->primaryKey(),
-            'name' => $this->date()->notNull(),
+            'date' => $this->string()->notNull(),
         ]);
     }
 
