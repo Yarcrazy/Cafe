@@ -24,4 +24,4 @@ API:
 3. GET /api/order/popular-cooks
 Получение списка популярных поваров за период
 Запрос: [from:string, to:string]
-Ответ: [string] | MethodNotAllowedHttpException
+Ответ: [{"name":string, "sum":int}] | MethodNotAllowedHttpException

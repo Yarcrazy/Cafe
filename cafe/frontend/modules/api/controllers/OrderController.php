@@ -64,7 +64,7 @@ class OrderController extends Controller
         $from = Yii::$app->request->get('from');
         $to = Yii::$app->request->get('to');
         return Yii::$app->db->createCommand('
-            SELECT c.name, count(om.menu_id) as count, sum(om.amount) as sum FROM cafe.public.cook c
+            SELECT c.name, sum(om.amount) as sum FROM cafe.public.cook c
             LEFT JOIN cafe.public.dish d on c.id = d.cook_id
             LEFT JOIN cafe.public.menu m on m.dish_id = d.id
             LEFT JOIN cafe.public.order_menu om on om.menu_id = m.id
@@ -76,7 +76,6 @@ class OrderController extends Controller
         ', [
             ':from' => $from,
             ':to' => $to
-        //])->queryAll();
-        ])->queryColumn('name');
+        ])->queryAll();
     }
 }
