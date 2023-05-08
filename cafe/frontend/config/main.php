@@ -36,14 +36,17 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => \yii\rest\UrlRule::class,
+                    'controller' => ['order'],
+                    'prefix' => 'api',
+                ]
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
